@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:my_watchlist_app/providers/movie_series_provider.dart';
 import 'package:my_auth_plugin/my_auth_plugin.dart';
-import 'package:my_watchlist_app/models/movie_series.dart';
 import 'package:my_watchlist_app/services/location_service.dart';
 import 'package:my_watchlist_app/screens/cinemas_nearby_screen.dart';
 import 'package:geolocator/geolocator.dart';
@@ -24,44 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
         listen: false,
       ).fetchMovieSeries();
     });
-  }
-
-  void _showAddItemDialog(BuildContext context) {
-    final TextEditingController titleController = TextEditingController();
-
-    showDialog(
-      context: context,
-      builder:
-          (ctx) => AlertDialog(
-            title: const Text('Adicionar Filme/Série Manualmente'),
-            content: TextField(
-              controller: titleController,
-              decoration: const InputDecoration(labelText: 'Título'),
-            ),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(ctx).pop();
-                },
-                child: const Text('Cancelar'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  if (titleController.text.isNotEmpty) {
-                    Provider.of<MovieSeriesProvider>(
-                      context,
-                      listen: false,
-                    ).addMovieSeries(
-                      MovieSeries(id: '', title: titleController.text),
-                    );
-                    Navigator.of(ctx).pop();
-                  }
-                },
-                child: const Text('Adicionar'),
-              ),
-            ],
-          ),
-    );
   }
 
   Future<void> _findCinemasNearby() async {
@@ -103,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, movieSeriesProvider, child) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Minha Lista de Filmes/Séries'),
+            title: const Text('Watchlist'),
             elevation: 0,
             actions: [
               IconButton(

@@ -1,4 +1,4 @@
-package com.example.my_watchlist_app
+package pro.matheus.my_watchlist_app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -69,6 +69,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '180632712016',
     projectId: 'my-watchlist-app-c96d8',
     storageBucket: 'my-watchlist-app-c96d8.firebasestorage.app',
-    iosBundleId: 'com.example.myWatchlistApp',
+    iosBundleId: 'pro.matheus.myWatchlistApp',
   );
 }
