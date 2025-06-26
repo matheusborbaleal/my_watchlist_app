@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, movieSeriesProvider, child) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Seja bem vindo(a)!'),
+            title: const Text('Watchlist'),
             elevation: 0,
             actions: [
               IconButton(

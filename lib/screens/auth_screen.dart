@@ -84,7 +84,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    _isLogin ? 'Watchlist' : 'Crie sua conta',
+                    _isLogin ? 'Seja bem vindo(a)' : 'Crie sua conta',
                     style: const TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
